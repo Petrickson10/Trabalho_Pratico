@@ -1,8 +1,13 @@
 [gd_scene format=3 uid="uid://ds78vbpnfwmg2"]
 
 [ext_resource type="Texture2D" uid="uid://dld8kpxipngv1" path="res://Arte/output-onlinegiftools.png" id="1_vpgfy"]
-[ext_resource type="Texture2D" uid="uid://btgkm54rwklp7" path="res://Arte/download-removebg-preview.png" id="2_eheat"]
+[ext_resource type="Texture2D" uid="uid://btgkm54rwklp7" path="res://Arte/Botoes/Normal.png" id="2_eheat"]
 [ext_resource type="FontFile" uid="uid://brpcgc1mhjgsq" path="res://Arte/pokemon_pixel_font.ttf" id="3_vpgfy"]
+[ext_resource type="Texture2D" uid="uid://c1bhureo172ft" path="res://Arte/Botoes/Acima.png" id="4_eheat"]
+[ext_resource type="Texture2D" uid="uid://dbfikgt3m3etc" path="res://Arte/Botoes/pressed.png" id="4_fapvr"]
+[ext_resource type="Texture2D" uid="uid://chcn5rq8m75pi" path="res://Arte/Botoes/Normal-S.png" id="6_kdsmm"]
+[ext_resource type="Texture2D" uid="uid://kgm66ewr78py" path="res://Arte/Botoes/Pressed-S.png" id="7_8lfl8"]
+[ext_resource type="Texture2D" uid="uid://cs6rvl0do5hq3" path="res://Arte/Botoes/Acima-S.png" id="8_plcv4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ouk20"]
 atlas = ExtResource("1_vpgfy")
@@ -207,8 +212,23 @@ shadow_color = Color(0.2, 0.91764706, 1, 1)
 
 [sub_resource type="Theme" id="Theme_mae5d"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l48gv"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vpgfy"]
 texture = ExtResource("2_eheat")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8lfl8"]
+texture = ExtResource("4_fapvr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kdsmm"]
+texture = ExtResource("4_eheat")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fapvr"]
+texture = ExtResource("6_kdsmm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8aipq"]
+texture = ExtResource("7_8lfl8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_plcv4"]
+texture = ExtResource("8_plcv4")
 
 [node name="Menu" type="Control" unique_id=1539887371]
 layout_mode = 3
@@ -235,14 +255,38 @@ text = "  Giratina's Revenge"
 label_settings = SubResource("LabelSettings_lti8b")
 
 [node name="Botoes" type="VBoxContainer" parent="." unique_id=1808033717]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.418
+anchor_top = 0.48000002
+anchor_right = 0.5310764
+anchor_bottom = 1.175926
+offset_left = -29.53601
+offset_top = 22.960022
+offset_right = 1144.2
+offset_bottom = 96.999756
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.2, 0.2)
 theme = SubResource("Theme_mae5d")
+theme_override_constants/separation = 55
 
 [node name="Jogar" type="Button" parent="Botoes" unique_id=137453264]
+custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxTexture_l48gv")
+theme_override_fonts/font = ExtResource("3_vpgfy")
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxTexture_vpgfy")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8lfl8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kdsmm")
+text = "Iniciar"
 
 [node name="Sair" type="Button" parent="Botoes" unique_id=450539205]
+custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_vpgfy")
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxTexture_fapvr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8aipq")
+theme_override_styles/hover = SubResource("StyleBoxTexture_plcv4")
+text = "Sair"

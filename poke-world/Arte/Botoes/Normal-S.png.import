@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btgkm54rwklp7"
-path="res://.godot/imported/download-removebg-preview.png-6516bf45e0e826949f09adc3a4eaf4d6.ctex"
+uid="uid://chcn5rq8m75pi"
+path="res://.godot/imported/Normal-S.png-66faab619a3d1cce14393da808a3971f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Arte/download-removebg-preview.png"
-dest_files=["res://.godot/imported/download-removebg-preview.png-6516bf45e0e826949f09adc3a4eaf4d6.ctex"]
+source_file="res://Arte/Botoes/Normal-S.png"
+dest_files=["res://.godot/imported/Normal-S.png-66faab619a3d1cce14393da808a3971f.ctex"]
 
 [params]
 
