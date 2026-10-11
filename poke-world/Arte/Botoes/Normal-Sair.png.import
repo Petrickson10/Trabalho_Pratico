@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbfikgt3m3etc"
-path="res://.godot/imported/pressed.png-356f29543c03d06b509e9589ca9fadae.ctex"
+uid="uid://chcn5rq8m75pi"
+path="res://.godot/imported/Normal-Sair.png-12131151329eeb042f624f04e24fcaed.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Arte/Botoes/pressed.png"
-dest_files=["res://.godot/imported/pressed.png-356f29543c03d06b509e9589ca9fadae.ctex"]
+source_file="res://Arte/Botoes/Normal-Sair.png"
+dest_files=["res://.godot/imported/Normal-Sair.png-12131151329eeb042f624f04e24fcaed.ctex"]
 
 [params]
 

@@ -1,0 +1,265 @@
+[gd_scene format=3 uid="uid://dy8y5p5vt61bg"]
+
+[ext_resource type="Texture2D" uid="uid://dkcor2rmngjmy" path="res://Arte/Art-Credito2.jpg" id="1_5vcb0"]
+[ext_resource type="Script" uid="uid://bkycrid2j4g38" path="res://Scripts/creditos.gd" id="1_a3en7"]
+[ext_resource type="FontFile" uid="uid://brpcgc1mhjgsq" path="res://Arte/pokemon_pixel_font.ttf" id="2_ct8y5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6dmbp"]
+font = ExtResource("2_ct8y5")
+font_size = 64
+font_color = Color(0.3614089, 0.62131375, 1, 1)
+outline_size = 10
+outline_color = Color(9.048581e-06, 0.98526984, 0.99367267, 1)
+shadow_size = 0
+shadow_color = Color(0.41568628, 0.6039216, 0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bpp88"]
+font = ExtResource("2_ct8y5")
+font_size = 32
+font_color = Color(0.3647059, 1, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_a3en7"]
+outline_size = 10
+outline_color = Color(0.6039216, 0, 0.17254902, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ct8y5"]
+outline_size = 10
+outline_color = Color(0.6039216, 0, 0.17254902, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0ep0f"]
+font = ExtResource("2_ct8y5")
+font_size = 32
+font_color = Color(0.3647059, 1, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_y3t63"]
+outline_size = 10
+outline_color = Color(0.6039216, 0, 0.17254902, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_lp7pw"]
+font = ExtResource("2_ct8y5")
+font_size = 32
+font_color = Color(0.3647059, 1, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_w78of"]
+outline_size = 10
+outline_color = Color(0.6039216, 0, 0.17254902, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_k6ged"]
+font = ExtResource("2_ct8y5")
+font_size = 32
+font_color = Color(0.30588236, 1, 0.007843138, 1)
+outline_size = 2
+outline_color = Color(0.15686275, 0.5019608, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_whdaa"]
+font = ExtResource("2_ct8y5")
+font_size = 27
+font_color = Color(1, 1, 0.31764707, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_576tj"]
+font_color = Color(1, 0.019607844, 1, 1)
+
+[sub_resource type="Animation" id="Animation_a3en7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer:offset_transform_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -1150)]
+}
+
+[sub_resource type="Animation" id="Animation_ct8y5"]
+resource_name = "Rolagem_Creditos"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBoxContainer:offset_transform_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 20), Vector2(0, -1150)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a3en7"]
+_data = {
+&"RESET": SubResource("Animation_a3en7"),
+&"Rolagem_Creditos": SubResource("Animation_ct8y5")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_ip5el"]
+font = ExtResource("2_ct8y5")
+font_size = 64
+font_color = Color(0, 0.5773826, 0.6561303, 1)
+
+[node name="Creditos" type="Control" unique_id=259147547]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a3en7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=903265930]
+position = Vector2(737, 326.4853)
+scale = Vector2(1.327284, 1.0268521)
+texture = ExtResource("1_5vcb0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=316281326]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -243.0
+offset_top = 318.0
+offset_right = 443.0
+offset_bottom = 855.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -1150)
+theme_override_constants/separation = 10
+
+[node name="Titulo" type="Label" parent="VBoxContainer" unique_id=170138338]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ct8y5")
+theme_override_font_sizes/font_size = 16
+text = "Creditos do Jogo:"
+label_settings = SubResource("LabelSettings_6dmbp")
+
+[node name="Desenvolvido" type="Label" parent="VBoxContainer" unique_id=1461504826]
+layout_mode = 2
+text = "Desenvolvido por:"
+label_settings = SubResource("LabelSettings_bpp88")
+
+[node name="Dev-1" type="Label" parent="VBoxContainer" unique_id=896011670]
+layout_mode = 2
+text = "       Larissa Luciana da Costa Vilela"
+label_settings = SubResource("LabelSettings_a3en7")
+
+[node name="Dev-2" type="Label" parent="VBoxContainer" unique_id=684194193]
+layout_mode = 2
+text = "       Petrick Henrique Alves dos Santos"
+label_settings = SubResource("LabelSettings_ct8y5")
+
+[node name="Programação" type="Label" parent="VBoxContainer" unique_id=965532277]
+layout_mode = 2
+text = "Programação:"
+label_settings = SubResource("LabelSettings_0ep0f")
+
+[node name="Prog" type="Label" parent="VBoxContainer" unique_id=776968297]
+layout_mode = 2
+text = "     Petrick Henrique Alves dos Santos"
+label_settings = SubResource("LabelSettings_y3t63")
+
+[node name="Arte" type="Label" parent="VBoxContainer" unique_id=1870604310]
+layout_mode = 2
+text = "Arte e Som:"
+label_settings = SubResource("LabelSettings_lp7pw")
+
+[node name="Prog2" type="Label" parent="VBoxContainer" unique_id=661799839]
+layout_mode = 2
+text = "       Larissa Luciana da Costa Vilela"
+label_settings = SubResource("LabelSettings_w78of")
+
+[node name="Agradecer" type="Label" parent="VBoxContainer" unique_id=1124050410]
+layout_mode = 2
+text = "Um Agradecimento Especial:"
+label_settings = SubResource("LabelSettings_k6ged")
+
+[node name="Camila" type="Label" parent="VBoxContainer" unique_id=1964156938]
+layout_mode = 2
+text = "       Obrigado Camila  por tudo que fizemos este ano, não conseguiriamos sem você... 
+       Tudo de bom   para   ti!!!!!!!"
+label_settings = SubResource("LabelSettings_whdaa")
+
+[node name="Mensagem" type="Label" parent="VBoxContainer" unique_id=2111369184]
+layout_mode = 2
+text = "Pra todos que desacreditaram, está aqui o resultado deste ano..."
+label_settings = SubResource("LabelSettings_576tj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=573055461]
+libraries/ = SubResource("AnimationLibrary_a3en7")
+autoplay = &"Rolagem_Creditos"
+
+[node name="Tela Final" type="Control" parent="." unique_id=249715241]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Mensagem" type="Label" parent="Tela Final" unique_id=824313770]
+visible = false
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 39.0
+offset_top = 19.0
+offset_right = 39.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "                                        OBRIGADO POR JOGAR!!!
+
+                                   Espero que tenha gostado!"
+label_settings = SubResource("LabelSettings_ip5el")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Tela Final" unique_id=1265836640]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -79.0
+offset_top = -188.0
+offset_right = 73.0
+offset_bottom = -96.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 20
+
+[node name="VoltarMenu" type="Button" parent="Tela Final/VBoxContainer" unique_id=242841633]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ct8y5")
+theme_override_font_sizes/font_size = 32
+text = "Voltar ao Menu"
+
+[node name="SairJogo" type="Button" parent="Tela Final/VBoxContainer" unique_id=199599990]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ct8y5")
+theme_override_font_sizes/font_size = 32
+text = "Sair do Jogo"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="pressed" from="Tela Final/VBoxContainer/VoltarMenu" to="." method="_on_voltar_menu_pressed"]
+[connection signal="pressed" from="Tela Final/VBoxContainer/SairJogo" to="." method="_on_sair_jogo_pressed"]

@@ -1,13 +1,17 @@
 [gd_scene format=3 uid="uid://ds78vbpnfwmg2"]
 
+[ext_resource type="Script" uid="uid://b548w4dhx6ki6" path="res://Scripts/menu.gd" id="1_8aipq"]
 [ext_resource type="Texture2D" uid="uid://dld8kpxipngv1" path="res://Arte/output-onlinegiftools.png" id="1_vpgfy"]
 [ext_resource type="Texture2D" uid="uid://btgkm54rwklp7" path="res://Arte/Botoes/Normal.png" id="2_eheat"]
 [ext_resource type="FontFile" uid="uid://brpcgc1mhjgsq" path="res://Arte/pokemon_pixel_font.ttf" id="3_vpgfy"]
 [ext_resource type="Texture2D" uid="uid://c1bhureo172ft" path="res://Arte/Botoes/Acima.png" id="4_eheat"]
-[ext_resource type="Texture2D" uid="uid://dbfikgt3m3etc" path="res://Arte/Botoes/pressed.png" id="4_fapvr"]
-[ext_resource type="Texture2D" uid="uid://chcn5rq8m75pi" path="res://Arte/Botoes/Normal-S.png" id="6_kdsmm"]
-[ext_resource type="Texture2D" uid="uid://kgm66ewr78py" path="res://Arte/Botoes/Pressed-S.png" id="7_8lfl8"]
-[ext_resource type="Texture2D" uid="uid://cs6rvl0do5hq3" path="res://Arte/Botoes/Acima-S.png" id="8_plcv4"]
+[ext_resource type="Texture2D" uid="uid://dbfikgt3m3etc" path="res://Arte/Botoes/Click_Normal.png" id="4_fapvr"]
+[ext_resource type="Texture2D" uid="uid://chcn5rq8m75pi" path="res://Arte/Botoes/Normal-Sair.png" id="6_kdsmm"]
+[ext_resource type="Texture2D" uid="uid://kgm66ewr78py" path="res://Arte/Botoes/Click_Sair.png" id="7_8lfl8"]
+[ext_resource type="Texture2D" uid="uid://cs6rvl0do5hq3" path="res://Arte/Botoes/Acima-Sair.png" id="8_plcv4"]
+[ext_resource type="Texture2D" uid="uid://c3vn3p1owwlog" path="res://Arte/Botoes/Normal_Credito.png" id="10_bpp88"]
+[ext_resource type="Texture2D" uid="uid://ce7euxrtgo2eu" path="res://Arte/Botoes/Click_Credito.png" id="11_ctkf8"]
+[ext_resource type="Texture2D" uid="uid://dybjkpvwrm7c8" path="res://Arte/Botoes/Acima_Credito.png" id="12_bro6f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ouk20"]
 atlas = ExtResource("1_vpgfy")
@@ -230,6 +234,15 @@ texture = ExtResource("7_8lfl8")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_plcv4"]
 texture = ExtResource("8_plcv4")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a3en7"]
+texture = ExtResource("10_bpp88")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0ep0f"]
+texture = ExtResource("11_ctkf8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y3t63"]
+texture = ExtResource("12_bro6f")
+
 [node name="Menu" type="Control" unique_id=1539887371]
 layout_mode = 3
 anchors_preset = 15
@@ -237,6 +250,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8aipq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1024062055]
 position = Vector2(571.5, 281)
@@ -290,3 +304,17 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_fapvr")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_8aipq")
 theme_override_styles/hover = SubResource("StyleBoxTexture_plcv4")
 text = "Sair"
+
+[node name="Creditos" type="Button" parent="Botoes" unique_id=1457815517]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_vpgfy")
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxTexture_a3en7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0ep0f")
+theme_override_styles/hover = SubResource("StyleBoxTexture_y3t63")
+text = "Créditos
+"
+
+[connection signal="pressed" from="Botoes/Jogar" to="." method="_on_jogar_pressed"]
+[connection signal="pressed" from="Botoes/Sair" to="." method="_on_sair_pressed"]
+[connection signal="pressed" from="Botoes/Creditos" to="." method="_on_creditos_pressed"]

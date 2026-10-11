@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chcn5rq8m75pi"
-path="res://.godot/imported/Normal-S.png-66faab619a3d1cce14393da808a3971f.ctex"
+uid="uid://dybjkpvwrm7c8"
+path="res://.godot/imported/Acima_Credito.png-5ce8faf390828457bea4c844e8ba85ca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Arte/Botoes/Normal-S.png"
-dest_files=["res://.godot/imported/Normal-S.png-66faab619a3d1cce14393da808a3971f.ctex"]
+source_file="res://Arte/Botoes/Acima_Credito.png"
+dest_files=["res://.godot/imported/Acima_Credito.png-5ce8faf390828457bea4c844e8ba85ca.ctex"]
 
 [params]
 
