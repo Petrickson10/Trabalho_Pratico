@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://bmbf55ua7v4gv"]
+
+[ext_resource type="Script" uid="uid://c6atswhgobbmw" path="res://Scripts/giratina_f.gd" id="1_ci771"]
+[ext_resource type="Texture2D" uid="uid://byd4p70y0yvia" path="res://Arte/Sprites/Giratina-Origem/Attack-Anim.png" id="2_a7ysi"]
+[ext_resource type="Texture2D" uid="uid://dgf6w6qm0dtof" path="res://Arte/Clouds 3/1.png" id="3_a7ysi"]
+[ext_resource type="Texture2D" uid="uid://r2sf0dlrxypv" path="res://Arte/Clouds 3/2.png" id="4_c30ex"]
+[ext_resource type="Texture2D" uid="uid://8v2qr4ue3eyo" path="res://Arte/Clouds 3/3.png" id="5_flab6"]
+[ext_resource type="Texture2D" uid="uid://u1e1j7l5nfhh" path="res://Arte/Clouds 3/4.png" id="6_1e8md"]
+[ext_resource type="Script" uid="uid://dyrfvlo8l2u07" path="res://Scripts/Parallax.gd" id="7_t3kv6"]
+[ext_resource type="Texture2D" uid="uid://bvn58kc0l012g" path="res://Arte/Clouds 3/6.png" id="8_1bxio"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6dmbp"]
+size = Vector2(1153, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ip5el"]
+size = Vector2(1152.5, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w78of"]
+size = Vector2(20, 647.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k6ged"]
+size = Vector2(20, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fltld"]
+atlas = ExtResource("2_a7ysi")
+region = Rect2(288, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2htff"]
+atlas = ExtResource("2_a7ysi")
+region = Rect2(384, 192, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6dmbp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fltld")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2htff")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a7ysi"]
+size = Vector2(81, 104)
+
+[sub_resource type="GDScript" id="GDScript_c30ex"]
+
+[node name="Final" type="Node2D" unique_id=798134499]
+
+[node name="Parede" type="Area2D" parent="." unique_id=886471079]
+
+[node name="Cima" type="CollisionShape2D" parent="Parede" unique_id=172417544]
+position = Vector2(575.5, -10)
+shape = SubResource("RectangleShape2D_6dmbp")
+
+[node name="Baixo" type="CollisionShape2D" parent="Parede" unique_id=1596037442]
+position = Vector2(576.75, 658)
+shape = SubResource("RectangleShape2D_ip5el")
+
+[node name="Esquerda" type="CollisionShape2D" parent="Parede" unique_id=416376425]
+position = Vector2(-10, 323.25)
+shape = SubResource("RectangleShape2D_w78of")
+
+[node name="Direita" type="CollisionShape2D" parent="Parede" unique_id=1601182101]
+position = Vector2(1162, 324)
+shape = SubResource("RectangleShape2D_k6ged")
+
+[node name="GiratinaF" type="CharacterBody2D" parent="." unique_id=745321095]
+script = ExtResource("1_ci771")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GiratinaF" unique_id=867947067]
+position = Vector2(109, 347)
+scale = Vector2(2.4107144, 2.4107144)
+sprite_frames = SubResource("SpriteFrames_6dmbp")
+frame_progress = 0.20349535
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GiratinaF" unique_id=1026732102]
+position = Vector2(106, 315)
+shape = SubResource("RectangleShape2D_a7ysi")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1332044735]
+script = ExtResource("7_t3kv6")
+
+[node name="Ceu" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1448505834]
+motion_scale = Vector2(0.01, 0.01)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Ceu" unique_id=1948483811]
+position = Vector2(577.00006, 322.49997)
+scale = Vector2(2.0000002, 2.009259)
+texture = ExtResource("3_a7ysi")
+
+[node name="Lua" type="ParallaxLayer" parent="ParallaxBackground" unique_id=105106398]
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Lua" unique_id=1947864919]
+position = Vector2(580.1273, 321.79147)
+scale = Vector2(1.9891411, 1.9771076)
+texture = ExtResource("4_c30ex")
+
+[node name="Estrelas" type="ParallaxLayer" parent="ParallaxBackground" unique_id=182237434]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(1152, 0)
+script = SubResource("GDScript_c30ex")
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Estrelas" unique_id=1406023465]
+position = Vector2(576.5, 324.00003)
+scale = Vector2(1.9982638, 2)
+texture = ExtResource("8_1bxio")
+
+[node name="Nuvem_Fundo" type="ParallaxLayer" parent="ParallaxBackground" unique_id=2090260733]
+motion_scale = Vector2(1.2, 1.2)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Nuvem_Fundo" unique_id=2001351957]
+position = Vector2(577, 324)
+scale = Vector2(2, 2)
+texture = ExtResource("5_flab6")
+
+[node name="Nuvem_Frente" type="ParallaxLayer" parent="ParallaxBackground" unique_id=710686102]
+motion_scale = Vector2(2, 2)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Nuvem_Frente" unique_id=1962197103]
+position = Vector2(576.00006, 324)
+scale = Vector2(2.0000002, 2)
+texture = ExtResource("6_1e8md")
