@@ -77,6 +77,7 @@ script = ExtResource("1_s5h8e")
 
 [node name="ImagemTipoArceus" type="AnimatedSprite2D" parent="." unique_id=1601209251]
 sprite_frames = SubResource("SpriteFrames_6dmbp")
+autoplay = "default"
 frame = 1
 
 [node name="CorpoTiroArceus" type="CollisionShape2D" parent="." unique_id=493250076]

@@ -4,6 +4,7 @@ var vida_atual: int
 @onready var label_vida: Label = $"../Vida_G"
 const SPEED = 300.0
 var cena_tiro
+@onready var animacao: AnimatedSprite2D = $AnimatedSprite2D
 
 func _ready() -> void:
 	vida_atual = vida_maxima
@@ -28,11 +29,13 @@ func receber_dano(quantidade: int = 1) -> void:
 func _physics_process(delta: float) -> void:
 	velocity.x = 0
 	velocity.y = 0
+	animacao.play("default")
 	if Input.is_action_just_pressed("ui_accept"):
 		var tiro = cena_tiro.instantiate()
-		tiro.position.y = position.y
-		tiro.position.x = position.x+50
+		tiro.position.y = position.y + 320
+		tiro.position.x = position.x+135
 		get_parent().add_child(tiro)
+		animacao.play("Atacar")
 	
 	if Input.is_action_pressed("ui_left"):
 		velocity.x = -1*SPEED

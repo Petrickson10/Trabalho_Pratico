@@ -67,7 +67,7 @@ position = Vector2(4.7683716e-07, 4.7683716e-07)
 scale = Vector2(1.75, 1.75)
 sprite_frames = SubResource("SpriteFrames_6dmbp")
 autoplay = "default"
-frame_progress = 0.267345
+frame_progress = 0.0091362735
 
 [node name="CorpoTiro" type="CollisionShape2D" parent="." unique_id=1276768718]
 position = Vector2(0, -1)

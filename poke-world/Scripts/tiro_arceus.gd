@@ -5,7 +5,8 @@ extends Area2D
 
 func _ready() -> void:
 	add_to_group("ProjetilArceus")
-	area_entered.connect(_on_area_entered)
+	body_entered.connect(_on_body_entered)
+	area_entered.connect(_on_body_entered)
 
 
 func _process(delta: float) -> void:
@@ -16,14 +17,15 @@ func _process(delta: float) -> void:
 		queue_free()
 
 
-func _on_area_entered(area: Area2D) -> void:
+func _on_body_entered(body: Node2D) -> void:
 	# Atingiu o Giratina.
-	if area.is_in_group("Giratina"):
-		area.receber_dano()
+	if body.is_in_group("Giratina"):
+		body.receber_dano()
 		queue_free()
 		return
 
 	# Atingiu o tiro do Giratina.
+func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("ProjetilGiratina"):
 		area.queue_free()
 		queue_free()

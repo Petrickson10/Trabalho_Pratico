@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://brnfdwj70su0w" path="res://Arte/Ataque.png" id="9_flab6"]
 [ext_resource type="FontFile" uid="uid://brpcgc1mhjgsq" path="res://Arte/pokemon_pixel_font.ttf" id="10_1e8md"]
 [ext_resource type="PackedScene" uid="uid://bg5fh6kdmni1f" path="res://Cenas/arceus.tscn" id="11_t3kv6"]
+[ext_resource type="Script" uid="uid://dn5bqyfdd4u8" path="res://Scripts/gerador_inimigos.gd" id="12_1bxio"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6dmbp"]
 size = Vector2(1153, 20)
@@ -77,22 +78,27 @@ font_size = 32
 font = ExtResource("10_1e8md")
 font_size = 32
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_pr75b"]
+atlas = ExtResource("2_a7ysi")
+region = Rect2(384, 192, 96, 96)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_fltld"]
 atlas = ExtResource("2_a7ysi")
 region = Rect2(288, 192, 96, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2htff"]
-atlas = ExtResource("2_a7ysi")
-region = Rect2(384, 192, 96, 96)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6dmbp"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fltld")
+"texture": SubResource("AtlasTexture_pr75b")
+}],
+"loop": 1,
+"name": &"Atacar",
+"speed": 5.0
 }, {
+"frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2htff")
+"texture": SubResource("AtlasTexture_fltld")
 }],
 "loop": 1,
 "name": &"default",
@@ -199,7 +205,6 @@ script = ExtResource("1_ci771")
 position = Vector2(109, 347)
 scale = Vector2(2.4107144, 2.4107144)
 sprite_frames = SubResource("SpriteFrames_6dmbp")
-frame_progress = 0.20349535
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GiratinaF" unique_id=1026732102]
 position = Vector2(106, 315)
@@ -207,3 +212,11 @@ shape = SubResource("RectangleShape2D_a7ysi")
 
 [node name="Arceus" parent="." unique_id=784029587 instance=ExtResource("11_t3kv6")]
 position = Vector2(1011, 374)
+
+[node name="GeradorInimigos" type="Node2D" parent="." unique_id=558604410]
+script = ExtResource("12_1bxio")
+
+[node name="Timer" type="Timer" parent="GeradorInimigos" unique_id=911196246]
+autostart = true
+
+[connection signal="timeout" from="GeradorInimigos/Timer" to="GeradorInimigos" method="_on_timer_timeout"]
