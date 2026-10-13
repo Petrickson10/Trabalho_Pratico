@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://bg5fh6kdmni1f"]
+
+[ext_resource type="Script" uid="uid://t84kvfvmsrn8" path="res://Scripts/arceus.gd" id="1_081c1"]
+[ext_resource type="Texture2D" uid="uid://ca4s0msx7diq6" path="res://Arte/Sprites/Arceus/SpAttack-Anim.png" id="1_c823w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_081c1"]
+atlas = ExtResource("1_c823w")
+region = Rect2(560, 768, 56, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ltsrj"]
+atlas = ExtResource("1_c823w")
+region = Rect2(504, 768, 56, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kv26w"]
+atlas = ExtResource("1_c823w")
+region = Rect2(448, 768, 56, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bl4el"]
+atlas = ExtResource("1_c823w")
+region = Rect2(392, 768, 56, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5pny"]
+atlas = ExtResource("1_c823w")
+region = Rect2(336, 768, 56, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66sso"]
+atlas = ExtResource("1_c823w")
+region = Rect2(280, 768, 56, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6dmbp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_081c1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ltsrj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kv26w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bl4el")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p5pny")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_66sso")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ip5el"]
+size = Vector2(78, 108)
+
+[node name="Arceus" type="Area2D" unique_id=784029587 groups=["Arceus"]]
+position = Vector2(0, 2)
+collision_layer = 2
+script = ExtResource("1_081c1")
+vida_maxima = 7
+
+[node name="AnimacaoA" type="AnimatedSprite2D" parent="." unique_id=1273147764]
+position = Vector2(2, 3)
+scale = Vector2(3.1607144, 3.1607144)
+sprite_frames = SubResource("SpriteFrames_6dmbp")
+autoplay = "default"
+frame_progress = 0.72072196
+
+[node name="CorpoA" type="CollisionShape2D" parent="." unique_id=331624029]
+position = Vector2(-1, -57)
+shape = SubResource("RectangleShape2D_ip5el")

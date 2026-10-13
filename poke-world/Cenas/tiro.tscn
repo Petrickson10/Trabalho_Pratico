@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://d1bs8jw31ndmp"]
+
+[ext_resource type="Script" uid="uid://djfflchjcy6rd" path="res://Scripts/tiro.gd" id="1_po8pd"]
+[ext_resource type="Texture2D" uid="uid://brnfdwj70su0w" path="res://Arte/Ataque.png" id="1_wr052"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_po8pd"]
+atlas = ExtResource("1_wr052")
+region = Rect2(192, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0468"]
+atlas = ExtResource("1_wr052")
+region = Rect2(224, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qs13w"]
+atlas = ExtResource("1_wr052")
+region = Rect2(256, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pvw0h"]
+atlas = ExtResource("1_wr052")
+region = Rect2(192, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_372s7"]
+atlas = ExtResource("1_wr052")
+region = Rect2(224, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lgni8"]
+atlas = ExtResource("1_wr052")
+region = Rect2(256, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6dmbp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_po8pd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v0468")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qs13w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pvw0h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_372s7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lgni8")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ip5el"]
+radius = 18.027756
+
+[node name="Tiro" type="Area2D" unique_id=1921418234 groups=["ProjetilGiratina"]]
+position = Vector2(1, 0)
+collision_layer = 8
+collision_mask = 6
+script = ExtResource("1_po8pd")
+
+[node name="ImagemTiro" type="AnimatedSprite2D" parent="." unique_id=2037647857]
+position = Vector2(4.7683716e-07, 4.7683716e-07)
+scale = Vector2(1.75, 1.75)
+sprite_frames = SubResource("SpriteFrames_6dmbp")
+autoplay = "default"
+frame_progress = 0.0091362735
+
+[node name="CorpoTiro" type="CollisionShape2D" parent="." unique_id=1276768718]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_ip5el")

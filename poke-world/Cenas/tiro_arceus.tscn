@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://b2aoepw5u3mu8"]
+
+[ext_resource type="Texture2D" uid="uid://i451tag6xait" path="res://Arte/pixel_art_large.png" id="1_haekx"]
+[ext_resource type="Script" uid="uid://qb5jxwmst4je" path="res://Scripts/tiro_arceus.gd" id="1_s5h8e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s5h8e"]
+atlas = ExtResource("1_haekx")
+region = Rect2(424, 0, 212, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqb1h"]
+atlas = ExtResource("1_haekx")
+region = Rect2(636, 0, 212, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ykkt2"]
+atlas = ExtResource("1_haekx")
+region = Rect2(848, 0, 212, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iw706"]
+atlas = ExtResource("1_haekx")
+region = Rect2(1060, 0, 212, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0jvp6"]
+atlas = ExtResource("1_haekx")
+region = Rect2(0, 250, 212, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4dmmm"]
+atlas = ExtResource("1_haekx")
+region = Rect2(212, 250, 212, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2luv"]
+atlas = ExtResource("1_haekx")
+region = Rect2(424, 250, 212, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qu36a"]
+atlas = ExtResource("1_haekx")
+region = Rect2(636, 250, 212, 250)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6dmbp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s5h8e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pqb1h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ykkt2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iw706")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0jvp6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4dmmm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2luv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qu36a")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ip5el"]
+radius = 47.010635
+
+[node name="TiroArceus" type="Area2D" unique_id=1136695862 groups=["ProjetilArceus"]]
+collision_layer = 4
+collision_mask = 9
+script = ExtResource("1_s5h8e")
+
+[node name="ImagemTipoArceus" type="AnimatedSprite2D" parent="." unique_id=1601209251]
+sprite_frames = SubResource("SpriteFrames_6dmbp")
+autoplay = "default"
+frame = 1
+
+[node name="CorpoTiroArceus" type="CollisionShape2D" parent="." unique_id=493250076]
+position = Vector2(-15, 23)
+shape = SubResource("CircleShape2D_ip5el")
