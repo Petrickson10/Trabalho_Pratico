@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://c3vn3p1owwlog" path="res://Arte/Botoes/Normal_Credito.png" id="10_bpp88"]
 [ext_resource type="Texture2D" uid="uid://ce7euxrtgo2eu" path="res://Arte/Botoes/Click_Credito.png" id="11_ctkf8"]
 [ext_resource type="Texture2D" uid="uid://dybjkpvwrm7c8" path="res://Arte/Botoes/Acima_Credito.png" id="12_bro6f"]
+[ext_resource type="AudioStream" uid="uid://bhrqksu4bwpkj" path="res://Arte/Musica/Pokémon Sword _ Shield Eternatus Battle Theme Phase 3(M4A_128K) (mp3cut.net).mp3" id="13_ctkf8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ouk20"]
 atlas = ExtResource("1_vpgfy")
@@ -314,6 +315,11 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_0ep0f")
 theme_override_styles/hover = SubResource("StyleBoxTexture_y3t63")
 text = "Créditos
 "
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=790112625]
+stream = ExtResource("13_ctkf8")
+volume_db = 21.383
+autoplay = true
 
 [connection signal="pressed" from="Botoes/Jogar" to="." method="_on_jogar_pressed"]
 [connection signal="pressed" from="Botoes/Sair" to="." method="_on_sair_pressed"]
