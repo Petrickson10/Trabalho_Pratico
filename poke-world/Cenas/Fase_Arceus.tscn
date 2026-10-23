@@ -89,10 +89,10 @@ region = Rect2(288, 192, 96, 96)
 [sub_resource type="SpriteFrames" id="SpriteFrames_6dmbp"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 2.0,
 "texture": SubResource("AtlasTexture_pr75b")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"Atacar",
 "speed": 5.0
 }, {
@@ -205,6 +205,8 @@ script = ExtResource("1_ci771")
 position = Vector2(109, 347)
 scale = Vector2(2.4107144, 2.4107144)
 sprite_frames = SubResource("SpriteFrames_6dmbp")
+animation = &"Atacar"
+autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GiratinaF" unique_id=1026732102]
 position = Vector2(106, 315)
