@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bpwud4vdksc0o" path="res://Arte/Sprites/Giratina/Idle-Anim.png" id="4_yxp37"]
 [ext_resource type="Script" uid="uid://d3va1w8yfysil" path="res://Scripts/orb.gd" id="5_k668f"]
 [ext_resource type="Texture2D" uid="uid://bf7a5nhr67ep2" path="res://Arte/images-Photoroom.png" id="5_tbb6g"]
+[ext_resource type="FontFile" uid="uid://brpcgc1mhjgsq" path="res://Arte/pokemon_pixel_font.ttf" id="7_yxp37"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qbx86"]
 texture = ExtResource("2_tbb6g")
@@ -311,6 +312,26 @@ size = Vector2(30, 39)
 [sub_resource type="CircleShape2D" id="CircleShape2D_ostoq"]
 radius = 16.0
 
+[sub_resource type="LabelSettings" id="LabelSettings_loq3h"]
+font = ExtResource("7_yxp37")
+font_size = 35
+shadow_size = 4
+shadow_color = Color(0.007843138, 0.15294118, 0.7019608, 1)
+
+[sub_resource type="Theme" id="Theme_jlj7e"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2tml3"]
+font = ExtResource("7_yxp37")
+font_size = 35
+shadow_size = 3
+shadow_color = Color(0.0065170964, 0.15227818, 0.7001457, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ostoq"]
+font = ExtResource("7_yxp37")
+font_size = 35
+shadow_size = 4
+shadow_color = Color(0.007843138, 0.15294118, 0.7019608, 1)
+
 [node name="Labirinto" type="Node2D" unique_id=1124162252]
 
 [node name="ColisaoLabirinto" type="TileMapLayer" parent="." unique_id=274277271]
@@ -356,16 +377,48 @@ position = Vector2(1481, 129)
 shape = SubResource("CircleShape2D_ostoq")
 
 [node name="Painel_vitoria" type="CanvasLayer" parent="." unique_id=1140225525]
+visible = false
 
 [node name="Control" type="Control" parent="Painel_vitoria" unique_id=701486135]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 107.0
+offset_top = -1.0
+offset_right = 331.0
+offset_bottom = 152.0
 
-[node name="Label" type="Label" parent="Painel_vitoria/Control" unique_id=1085397213]
+[node name="Botao_menu" type="Label" parent="Painel_vitoria/Control" unique_id=1085397213]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 88.0
+offset_top = 80.0
+offset_right = 141.0
+offset_bottom = 112.0
+text = "Menu"
+label_settings = SubResource("LabelSettings_loq3h")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Botao_mapa" type="Label" parent="Painel_vitoria/Control" unique_id=784657310]
+layout_mode = 0
+offset_left = 87.0
+offset_top = 24.0
+offset_right = 140.0
+offset_bottom = 56.0
+theme = SubResource("Theme_jlj7e")
+text = "Mapa"
+label_settings = SubResource("LabelSettings_2tml3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Botao_sair" type="Label" parent="Painel_vitoria/Control" unique_id=747954699]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 126.0
+offset_right = 136.0
+offset_bottom = 158.0
+text = "Sair"
+label_settings = SubResource("LabelSettings_ostoq")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="body_entered" from="Orb" to="Orb" method="_on_body_entered"]
