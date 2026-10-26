@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://f7gx0wrpiwo8" path="res://Arte/TileMap/DistortionWorld.png" id="2_tbb6g"]
 [ext_resource type="Script" uid="uid://c057pqlcsuox2" path="res://Scripts/giratina.gd" id="3_k668f"]
 [ext_resource type="Texture2D" uid="uid://bpwud4vdksc0o" path="res://Arte/Sprites/Giratina/Idle-Anim.png" id="4_yxp37"]
+[ext_resource type="Script" uid="uid://d3va1w8yfysil" path="res://Scripts/orb.gd" id="5_k668f"]
 [ext_resource type="Texture2D" uid="uid://bf7a5nhr67ep2" path="res://Arte/images-Photoroom.png" id="5_tbb6g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qbx86"]
@@ -307,6 +308,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fbg0y"]
 size = Vector2(30, 39)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ostoq"]
+radius = 16.0
+
 [node name="Labirinto" type="Node2D" unique_id=1124162252]
 
 [node name="ColisaoLabirinto" type="TileMapLayer" parent="." unique_id=274277271]
@@ -338,7 +342,30 @@ scale = Vector2(0.8333333, 0.8333333)
 zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 
-[node name="Orb" type="Sprite2D" parent="." unique_id=1840513959]
+[node name="Orb" type="Area2D" parent="." unique_id=730762017]
+position = Vector2(3, 27)
+script = ExtResource("5_k668f")
+
+[node name="Sprite_Orb" type="Sprite2D" parent="Orb" unique_id=1840513959]
 position = Vector2(1480, 128)
 scale = Vector2(0.070370555, 0.070370555)
 texture = ExtResource("5_tbb6g")
+
+[node name="Colisao_orb" type="CollisionShape2D" parent="Orb" unique_id=899610150]
+position = Vector2(1481, 129)
+shape = SubResource("CircleShape2D_ostoq")
+
+[node name="Painel_vitoria" type="CanvasLayer" parent="." unique_id=1140225525]
+
+[node name="Control" type="Control" parent="Painel_vitoria" unique_id=701486135]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Painel_vitoria/Control" unique_id=1085397213]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[connection signal="body_entered" from="Orb" to="Orb" method="_on_body_entered"]
