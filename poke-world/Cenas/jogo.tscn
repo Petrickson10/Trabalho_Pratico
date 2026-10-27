@@ -2228,6 +2228,51 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_ctkf8")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_bro6f")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mbksb")
 text = "Tempo"
+metadata/_edit_use_anchors_ = true
+
+[node name="Area_botao2" type="Area2D" parent="." unique_id=270548991 node_paths=PackedStringArray("botao")]
+script = ExtResource("8_p2wm8")
+botao = NodePath("Botao2")
+
+[node name="Colisao_botao2" type="CollisionShape2D" parent="Area_botao2" unique_id=536667859]
+position = Vector2(584, 1326)
+shape = SubResource("RectangleShape2D_ostoq")
+
+[node name="Botao2" type="Button" parent="Area_botao2" unique_id=1406540566]
+offset_left = 552.0
+offset_top = 1309.0
+offset_right = 614.0
+offset_bottom = 1340.0
+theme_override_fonts/font = ExtResource("9_r4inx")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ctkf8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bro6f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mbksb")
+text = "Espaço
+
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Area_botao3" type="Area2D" parent="." unique_id=950098591 node_paths=PackedStringArray("botao")]
+script = ExtResource("8_p2wm8")
+botao = NodePath("Botao3")
+
+[node name="Colisao_botao3" type="CollisionShape2D" parent="Area_botao3" unique_id=672860351]
+position = Vector2(1782, 716)
+shape = SubResource("RectangleShape2D_ostoq")
+
+[node name="Botao3" type="Button" parent="Area_botao3" unique_id=1224638723]
+offset_left = 1754.0
+offset_top = 703.0
+offset_right = 1816.0
+offset_bottom = 734.0
+theme_override_fonts/font = ExtResource("9_r4inx")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ctkf8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bro6f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mbksb")
+text = "Espaço
+
+"
+metadata/_edit_use_anchors_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=835507273]
 
@@ -2238,3 +2283,7 @@ position = Vector2(2775, -7)
 [connection signal="body_entered" from="Area_botao1" to="Area_botao1" method="_on_body_entered"]
 [connection signal="body_exited" from="Area_botao1" to="Area_botao1" method="_on_body_exited"]
 [connection signal="pressed" from="Area_botao1/Botao1" to="." method="_on_botao_1_pressed"]
+[connection signal="body_entered" from="Area_botao2" to="Area_botao2" method="_on_body_entered"]
+[connection signal="body_exited" from="Area_botao2" to="Area_botao2" method="_on_body_exited"]
+[connection signal="body_entered" from="Area_botao3" to="Area_botao3" method="_on_body_entered"]
+[connection signal="body_exited" from="Area_botao3" to="Area_botao3" method="_on_body_exited"]
