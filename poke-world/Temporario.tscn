@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://b7h58x148a2sv"]
+
+[ext_resource type="Script" uid="uid://c057pqlcsuox2" path="res://Scripts/giratina.gd" id="1_d3tkq"]
+[ext_resource type="Texture2D" uid="uid://bpwud4vdksc0o" path="res://Arte/Sprites/Giratina/Idle-Anim.png" id="2_0wan2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_reiul"]
+atlas = ExtResource("2_0wan2")
+region = Rect2(0, 0, 56, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmmbr"]
+atlas = ExtResource("2_0wan2")
+region = Rect2(56, 0, 56, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2wm8"]
+atlas = ExtResource("2_0wan2")
+region = Rect2(0, 320, 56, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4inx"]
+atlas = ExtResource("2_0wan2")
+region = Rect2(56, 320, 56, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0iqwg"]
+atlas = ExtResource("2_0wan2")
+region = Rect2(0, 160, 56, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7fpx"]
+atlas = ExtResource("2_0wan2")
+region = Rect2(56, 160, 56, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ekxr"]
+atlas = ExtResource("2_0wan2")
+region = Rect2(0, 480, 56, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6akw"]
+atlas = ExtResource("2_0wan2")
+region = Rect2(56, 480, 56, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_67osj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_reiul")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xmmbr")
+}],
+"loop": 1,
+"name": &"Andar Baixo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p2wm8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r4inx")
+}],
+"loop": 1,
+"name": &"Andar Cima",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0iqwg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j7fpx")
+}],
+"loop": 1,
+"name": &"Andar Direita",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ekxr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6akw")
+}],
+"loop": 1,
+"name": &"Andar Esquerda",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fbg0y"]
+size = Vector2(30, 39)
+
+[node name="Giratina" type="CharacterBody2D" unique_id=504588873]
+position = Vector2(311, 138)
+scale = Vector2(1.2, 1.2)
+script = ExtResource("1_d3tkq")
+
+[node name="AnimacaoG" type="AnimatedSprite2D" parent="." unique_id=1321979146]
+sprite_frames = SubResource("SpriteFrames_67osj")
+animation = &"Andar Direita"
+
+[node name="ColisaoG" type="CollisionShape2D" parent="." unique_id=1203122633]
+position = Vector2(-1, -13)
+shape = SubResource("RectangleShape2D_fbg0y")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2111619087]
+position = Vector2(1.6666565, -11.666672)
+scale = Vector2(0.8333333, 0.8333333)
+zoom = Vector2(2, 2)
+position_smoothing_enabled = true
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1800042182]

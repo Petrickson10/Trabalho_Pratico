@@ -2,8 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://dw7lymrr44mg3" path="res://Arte/maze.png" id="1_1tcmj"]
 [ext_resource type="Texture2D" uid="uid://f7gx0wrpiwo8" path="res://Arte/TileMap/DistortionWorld.png" id="2_tbb6g"]
-[ext_resource type="Script" uid="uid://c057pqlcsuox2" path="res://Scripts/giratina.gd" id="3_k668f"]
-[ext_resource type="Texture2D" uid="uid://bpwud4vdksc0o" path="res://Arte/Sprites/Giratina/Idle-Anim.png" id="4_yxp37"]
 [ext_resource type="Script" uid="uid://d3va1w8yfysil" path="res://Scripts/orb.gd" id="5_k668f"]
 [ext_resource type="Texture2D" uid="uid://bf7a5nhr67ep2" path="res://Arte/images-Photoroom.png" id="5_tbb6g"]
 [ext_resource type="FontFile" uid="uid://brpcgc1mhjgsq" path="res://Arte/pokemon_pixel_font.ttf" id="7_yxp37"]
@@ -227,88 +225,6 @@ texture = ExtResource("2_tbb6g")
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_qbx86")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_reiul"]
-atlas = ExtResource("4_yxp37")
-region = Rect2(0, 0, 56, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xmmbr"]
-atlas = ExtResource("4_yxp37")
-region = Rect2(56, 0, 56, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_p2wm8"]
-atlas = ExtResource("4_yxp37")
-region = Rect2(0, 320, 56, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_r4inx"]
-atlas = ExtResource("4_yxp37")
-region = Rect2(56, 320, 56, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0iqwg"]
-atlas = ExtResource("4_yxp37")
-region = Rect2(0, 160, 56, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_j7fpx"]
-atlas = ExtResource("4_yxp37")
-region = Rect2(56, 160, 56, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0ekxr"]
-atlas = ExtResource("4_yxp37")
-region = Rect2(0, 480, 56, 80)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_n6akw"]
-atlas = ExtResource("4_yxp37")
-region = Rect2(56, 480, 56, 80)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_67osj"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_reiul")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xmmbr")
-}],
-"loop": 1,
-"name": &"Andar Baixo",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_p2wm8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_r4inx")
-}],
-"loop": 1,
-"name": &"Andar Cima",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0iqwg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_j7fpx")
-}],
-"loop": 1,
-"name": &"Andar Direita",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0ekxr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_n6akw")
-}],
-"loop": 1,
-"name": &"Andar Esquerda",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fbg0y"]
-size = Vector2(30, 39)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_ostoq"]
 radius = 16.0
 
@@ -365,25 +281,6 @@ position = Vector2(840.0103, 466.99997)
 scale = Vector2(1.8760008, 1.8760003)
 texture = ExtResource("1_1tcmj")
 
-[node name="Giratina" type="CharacterBody2D" parent="." unique_id=1905948173]
-position = Vector2(311, 138)
-scale = Vector2(1.2, 1.2)
-script = ExtResource("3_k668f")
-
-[node name="AnimacaoG" type="AnimatedSprite2D" parent="Giratina" unique_id=637880930]
-sprite_frames = SubResource("SpriteFrames_67osj")
-animation = &"Andar Direita"
-
-[node name="ColisaoG" type="CollisionShape2D" parent="Giratina" unique_id=547996698]
-position = Vector2(-1, -13)
-shape = SubResource("RectangleShape2D_fbg0y")
-
-[node name="Camera2D" type="Camera2D" parent="Giratina" unique_id=181822013]
-position = Vector2(1.6666565, -11.666672)
-scale = Vector2(0.8333333, 0.8333333)
-zoom = Vector2(2, 2)
-position_smoothing_enabled = true
-
 [node name="Orb" type="Area2D" parent="." unique_id=730762017]
 position = Vector2(3, 27)
 script = ExtResource("5_k668f")
@@ -400,6 +297,7 @@ shape = SubResource("CircleShape2D_ostoq")
 [node name="Painel_vitoria" type="CanvasLayer" parent="." unique_id=1140225525]
 
 [node name="Control" type="Control" parent="Painel_vitoria" unique_id=701486135]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 107.0
