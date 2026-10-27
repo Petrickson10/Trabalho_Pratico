@@ -2860,7 +2860,7 @@ tile_set = SubResource("TileSet_ketxm")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1821438987]
 stream = ExtResource("7_xmmbr")
-volume_db = 15.0
+volume_db = 5.0
 autoplay = true
 
 [node name="Area_botao1" type="Area2D" parent="." unique_id=1926457890 node_paths=PackedStringArray("botao")]
@@ -2941,7 +2941,7 @@ position = Vector2(2944, 126)
 [node name="Marker2D" type="Marker2D" parent="Labirinto" unique_id=19549344]
 position = Vector2(220, 178)
 
-[node name="Giratina" type="CharacterBody2D" parent="." unique_id=478]
+[node name="Giratina" type="CharacterBody2D" parent="." unique_id=478 groups=["Giratina!"]]
 position = Vector2(845, 548)
 script = ExtResource("3_y28df")
 
@@ -2957,6 +2957,16 @@ shape = SubResource("RectangleShape2D_6dmbp")
 position = Vector2(2, -12)
 zoom = Vector2(2, 2)
 position_smoothing_enabled = true
+
+[node name="Ponto1" type="Marker2D" parent="." unique_id=136503170]
+position = Vector2(568, 210)
+
+[node name="Ponto2" type="Marker2D" parent="." unique_id=792620603]
+position = Vector2(1863, 698)
+
+[node name="Timer" type="Timer" parent="." unique_id=1557638282]
+wait_time = 30.0
+one_shot = true
 
 [connection signal="body_entered" from="Area_botao1" to="Area_botao1" method="_on_body_entered"]
 [connection signal="body_exited" from="Area_botao1" to="Area_botao1" method="_on_body_exited"]

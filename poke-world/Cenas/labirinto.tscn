@@ -6,6 +6,14 @@
 [ext_resource type="Texture2D" uid="uid://bf7a5nhr67ep2" path="res://Arte/images-Photoroom.png" id="5_tbb6g"]
 [ext_resource type="FontFile" uid="uid://brpcgc1mhjgsq" path="res://Arte/pokemon_pixel_font.ttf" id="7_yxp37"]
 
+[sub_resource type="GDScript" id="GDScript_k668f"]
+script/source = "extends Node2D
+@onready var personagem:CharacterBody2D = $Giratina
+@onready var natural: Marker2D =$Ponto1
+func _on_timer_timeout() -> void:
+	personagem.global_position = natural.global_position
+"
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qbx86"]
 texture = ExtResource("2_tbb6g")
 0:0/0 = 0
@@ -270,6 +278,7 @@ shadow_size = 4
 shadow_color = Color(0.007843138, 0.15294118, 0.7019608, 1)
 
 [node name="Labirinto" type="Node2D" unique_id=1124162252]
+script = SubResource("GDScript_k668f")
 
 [node name="ColisaoLabirinto" type="TileMapLayer" parent="." unique_id=274277271]
 position = Vector2(2, 0)
@@ -290,18 +299,14 @@ position = Vector2(1480, 128)
 scale = Vector2(0.070370555, 0.070370555)
 texture = ExtResource("5_tbb6g")
 
-[node name="Colisao_orb" type="CollisionShape2D" parent="Orb" unique_id=899610150]
+[node name="Colisao_orb" type="CollisionShape2D" parent="Orb" unique_id=899610150 groups=["Giratina!"]]
 position = Vector2(1481, 129)
 shape = SubResource("CircleShape2D_ostoq")
 
-[node name="Painel_vitoria" type="CanvasLayer" parent="." unique_id=1140225525]
-
-[node name="Label" type="Label" parent="Painel_vitoria" unique_id=1975102579]
-offset_right = 40.0
-offset_bottom = 23.0
-
-[node name="Control" type="Control" parent="Painel_vitoria" unique_id=701486135]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1005096417]
 visible = false
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=701486135]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 107.0
@@ -309,14 +314,14 @@ offset_top = -1.0
 offset_right = 331.0
 offset_bottom = 152.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Painel_vitoria/Control" unique_id=1670784829]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control" unique_id=1670784829]
 layout_mode = 0
 offset_left = 151.0
 offset_top = 60.0
 offset_right = 269.0
 offset_bottom = 184.0
 
-[node name="Botao_mapa" type="Label" parent="Painel_vitoria/Control/VBoxContainer" unique_id=784657310]
+[node name="Botao_mapa" type="Label" parent="CanvasLayer/Control/VBoxContainer" unique_id=784657310]
 layout_mode = 2
 theme = SubResource("Theme_jlj7e")
 theme_override_styles/normal = SubResource("StyleBoxFlat_r4inx")
@@ -325,7 +330,7 @@ label_settings = SubResource("LabelSettings_2tml3")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Botao_menu" type="Label" parent="Painel_vitoria/Control/VBoxContainer" unique_id=1085397213]
+[node name="Botao_menu" type="Label" parent="CanvasLayer/Control/VBoxContainer" unique_id=1085397213]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_j7fpx")
 text = "Menu"
@@ -333,7 +338,7 @@ label_settings = SubResource("LabelSettings_loq3h")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Botao_sair" type="Label" parent="Painel_vitoria/Control/VBoxContainer" unique_id=747954699]
+[node name="Botao_sair" type="Label" parent="CanvasLayer/Control/VBoxContainer" unique_id=747954699]
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_0ekxr")
 text = "Sair"
