@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://bvkoyn04lybl"]
 
+[ext_resource type="Script" uid="uid://441pq8ocrt2v" path="res://Scripts/jogo.gd" id="1_0iqwg"]
 [ext_resource type="Texture2D" uid="uid://opgukbj7flg4" path="res://Arte/Fundo.png" id="1_evvns"]
 [ext_resource type="Texture2D" uid="uid://didxegncwyej4" path="res://Arte/TileMap/TileMap2.png" id="2_y28df"]
 [ext_resource type="Texture2D" uid="uid://f7gx0wrpiwo8" path="res://Arte/TileMap/DistortionWorld.png" id="3_reiul"]
@@ -8,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://086t82xiusd8" path="res://Arte/TileMap/Ruinas2.png" id="4_xmmbr"]
 [ext_resource type="AudioStream" uid="uid://cesfxefr0qchs" path="res://Arte/Musica/Distortion-World-Pokémon-Platinum-Music-Extended-HD_M4A_128K_.mp3" id="7_xmmbr"]
 [ext_resource type="Script" uid="uid://bo6m18jo8ymq1" path="res://Scripts/Area_botao1.gd" id="8_p2wm8"]
+[ext_resource type="FontFile" uid="uid://brpcgc1mhjgsq" path="res://Arte/pokemon_pixel_font.ttf" id="9_r4inx"]
+[ext_resource type="PackedScene" uid="uid://ctpbyj7sp18i1" path="res://Cenas/labirinto.tscn" id="11_j7fpx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ovbra"]
 texture = ExtResource("2_y28df")
@@ -2140,9 +2143,32 @@ animations = [{
 size = Vector2(30, 42)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ostoq"]
-size = Vector2(430, 242)
+size = Vector2(111, 102)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ctkf8"]
+bg_color = Color(4.9093364e-06, 0.6680197, 0.8023658, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bro6f"]
+bg_color = Color(0, 0.6, 0.6, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mbksb"]
+bg_color = Color(0.18039216, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [node name="Jogo" type="Node2D" unique_id=368319533]
+script = ExtResource("1_0iqwg")
 
 [node name="Fundo" type="Sprite2D" parent="." unique_id=1715801217]
 position = Vector2(1383.1073, 805.66974)
@@ -2177,29 +2203,38 @@ shape = SubResource("RectangleShape2D_6dmbp")
 
 [node name="Camera2D" type="Camera2D" parent="Giratina" unique_id=1988038779]
 position = Vector2(2, -12)
-zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1821438987]
 stream = ExtResource("7_xmmbr")
+volume_db = 15.0
 autoplay = true
 
 [node name="Area_botao1" type="Area2D" parent="." unique_id=1926457890 node_paths=PackedStringArray("botao")]
 script = ExtResource("8_p2wm8")
-botao = NodePath("../CanvasLayer/Botao1")
+botao = NodePath("Botao1")
 
 [node name="Colisao_botao1" type="CollisionShape2D" parent="Area_botao1" unique_id=1748206221]
-position = Vector2(486, 246)
+position = Vector2(490, 222)
 shape = SubResource("RectangleShape2D_ostoq")
+
+[node name="Botao1" type="Button" parent="Area_botao1" unique_id=30795859]
+offset_left = 460.0
+offset_top = 204.0
+offset_right = 522.0
+offset_bottom = 235.0
+theme_override_fonts/font = ExtResource("9_r4inx")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ctkf8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bro6f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mbksb")
+text = "Tempo"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=835507273]
 
-[node name="Botao1" type="Button" parent="CanvasLayer" unique_id=30795859]
-offset_left = 478.0
-offset_top = 207.0
-offset_right = 506.0
-offset_bottom = 238.0
-text = "1"
+[node name="Labirinto" parent="." unique_id=1124162252 instance=ExtResource("11_j7fpx")]
+visible = false
+position = Vector2(2775, -7)
 
 [connection signal="body_entered" from="Area_botao1" to="Area_botao1" method="_on_body_entered"]
 [connection signal="body_exited" from="Area_botao1" to="Area_botao1" method="_on_body_exited"]
+[connection signal="pressed" from="Area_botao1/Botao1" to="." method="_on_botao_1_pressed"]
