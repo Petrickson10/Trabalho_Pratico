@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bpwud4vdksc0o" path="res://Arte/Sprites/Giratina/Idle-Anim.png" id="4_ovbra"]
 [ext_resource type="Texture2D" uid="uid://086t82xiusd8" path="res://Arte/TileMap/Ruinas2.png" id="4_xmmbr"]
 [ext_resource type="AudioStream" uid="uid://cesfxefr0qchs" path="res://Arte/Musica/Distortion-World-Pokémon-Platinum-Music-Extended-HD_M4A_128K_.mp3" id="7_xmmbr"]
+[ext_resource type="Script" uid="uid://bo6m18jo8ymq1" path="res://Scripts/Area_botao1.gd" id="8_p2wm8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ovbra"]
 texture = ExtResource("2_y28df")
@@ -2138,6 +2139,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6dmbp"]
 size = Vector2(30, 42)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ostoq"]
+size = Vector2(430, 242)
+
 [node name="Jogo" type="Node2D" unique_id=368319533]
 
 [node name="Fundo" type="Sprite2D" parent="." unique_id=1715801217]
@@ -2160,7 +2164,7 @@ tile_map_data = PackedByteArray("AAAZAAoAAAADAAQAAAAZAAsAAAADAAUAAAAZAAwAAAADAAY
 tile_set = SubResource("TileSet_ketxm")
 
 [node name="Giratina" type="CharacterBody2D" parent="." unique_id=478]
-position = Vector2(486, 235)
+position = Vector2(845, 548)
 script = ExtResource("3_y28df")
 
 [node name="AnimacaoG" type="AnimatedSprite2D" parent="Giratina" unique_id=1700527000]
@@ -2179,3 +2183,23 @@ position_smoothing_enabled = true
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1821438987]
 stream = ExtResource("7_xmmbr")
 autoplay = true
+
+[node name="Area_botao1" type="Area2D" parent="." unique_id=1926457890 node_paths=PackedStringArray("botao")]
+script = ExtResource("8_p2wm8")
+botao = NodePath("../CanvasLayer/Botao1")
+
+[node name="Colisao_botao1" type="CollisionShape2D" parent="Area_botao1" unique_id=1748206221]
+position = Vector2(486, 246)
+shape = SubResource("RectangleShape2D_ostoq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=835507273]
+
+[node name="Botao1" type="Button" parent="CanvasLayer" unique_id=30795859]
+offset_left = 478.0
+offset_top = 207.0
+offset_right = 506.0
+offset_bottom = 238.0
+text = "1"
+
+[connection signal="body_entered" from="Area_botao1" to="Area_botao1" method="_on_body_entered"]
+[connection signal="body_exited" from="Area_botao1" to="Area_botao1" method="_on_body_exited"]
