@@ -296,6 +296,10 @@ shape = SubResource("CircleShape2D_ostoq")
 
 [node name="Painel_vitoria" type="CanvasLayer" parent="." unique_id=1140225525]
 
+[node name="Label" type="Label" parent="Painel_vitoria" unique_id=1975102579]
+offset_right = 40.0
+offset_bottom = 23.0
+
 [node name="Control" type="Control" parent="Painel_vitoria" unique_id=701486135]
 visible = false
 layout_mode = 3
