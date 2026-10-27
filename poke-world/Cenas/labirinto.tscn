@@ -314,17 +314,38 @@ radius = 16.0
 
 [sub_resource type="Theme" id="Theme_jlj7e"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r4inx"]
+bg_color = Color(0.30026743, 0.6445047, 0.8072832, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
 [sub_resource type="LabelSettings" id="LabelSettings_2tml3"]
 font = ExtResource("7_yxp37")
 font_size = 35
 shadow_size = 3
 shadow_color = Color(0.0065170964, 0.15227818, 0.7001457, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j7fpx"]
+bg_color = Color(0.3019608, 0.6431373, 0.80784315, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
 [sub_resource type="LabelSettings" id="LabelSettings_loq3h"]
 font = ExtResource("7_yxp37")
 font_size = 35
 shadow_size = 4
 shadow_color = Color(0.007843138, 0.15294118, 0.7019608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ekxr"]
+bg_color = Color(0.3019608, 0.6431373, 0.80784315, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
 
 [sub_resource type="LabelSettings" id="LabelSettings_ostoq"]
 font = ExtResource("7_yxp37")
@@ -387,16 +408,16 @@ offset_right = 331.0
 offset_bottom = 152.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Painel_vitoria/Control" unique_id=1670784829]
-visible = false
 layout_mode = 0
-offset_left = 158.0
-offset_top = 39.0
-offset_right = 276.0
-offset_bottom = 163.0
+offset_left = 151.0
+offset_top = 60.0
+offset_right = 269.0
+offset_bottom = 184.0
 
 [node name="Botao_mapa" type="Label" parent="Painel_vitoria/Control/VBoxContainer" unique_id=784657310]
 layout_mode = 2
 theme = SubResource("Theme_jlj7e")
+theme_override_styles/normal = SubResource("StyleBoxFlat_r4inx")
 text = "Mapa"
 label_settings = SubResource("LabelSettings_2tml3")
 horizontal_alignment = 1
@@ -404,6 +425,7 @@ vertical_alignment = 1
 
 [node name="Botao_menu" type="Label" parent="Painel_vitoria/Control/VBoxContainer" unique_id=1085397213]
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_j7fpx")
 text = "Menu"
 label_settings = SubResource("LabelSettings_loq3h")
 horizontal_alignment = 1
@@ -411,6 +433,7 @@ vertical_alignment = 1
 
 [node name="Botao_sair" type="Label" parent="Painel_vitoria/Control/VBoxContainer" unique_id=747954699]
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_0ekxr")
 text = "Sair"
 label_settings = SubResource("LabelSettings_ostoq")
 horizontal_alignment = 1
