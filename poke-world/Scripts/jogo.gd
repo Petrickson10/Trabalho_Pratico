@@ -4,4 +4,5 @@ extends Node2D
 
 
 func _on_botao_1_pressed() -> void:
-	Labirinto.visible==true
+	Labirinto.visible = true
+	print("iee")
