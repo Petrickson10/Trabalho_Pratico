@@ -236,6 +236,18 @@ sources/1 = SubResource("TileSetAtlasSource_qbx86")
 [sub_resource type="CircleShape2D" id="CircleShape2D_ostoq"]
 radius = 16.0
 
+[sub_resource type="Theme" id="Theme_loq3h"]
+
+[sub_resource type="FontVariation" id="FontVariation_ostoq"]
+base_font = ExtResource("7_yxp37")
+
+[sub_resource type="LabelSettings" id="LabelSettings_ajtct"]
+font = ExtResource("7_yxp37")
+font_size = 55
+shadow_size = 7
+shadow_color = Color(0.09803922, 0.22745098, 0.7294118, 1)
+shadow_offset = Vector2(1.5, 1)
+
 [sub_resource type="Theme" id="Theme_jlj7e"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r4inx"]
@@ -290,9 +302,10 @@ position = Vector2(840.0103, 466.99997)
 scale = Vector2(1.8760008, 1.8760003)
 texture = ExtResource("1_1tcmj")
 
-[node name="Orb" type="Area2D" parent="." unique_id=730762017]
+[node name="Orb" type="Area2D" parent="." unique_id=730762017 node_paths=PackedStringArray("painel_vitoria")]
 position = Vector2(3, 27)
 script = ExtResource("5_k668f")
+painel_vitoria = NodePath("../CanvasLayer/Control")
 
 [node name="Sprite_Orb" type="Sprite2D" parent="Orb" unique_id=1840513959]
 position = Vector2(1480, 128)
@@ -304,15 +317,28 @@ position = Vector2(1481, 129)
 shape = SubResource("CircleShape2D_ostoq")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1005096417]
-visible = false
+process_mode = 3
 
 [node name="Control" type="Control" parent="CanvasLayer" unique_id=701486135]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 107.0
-offset_top = -1.0
-offset_right = 331.0
-offset_bottom = 152.0
+offset_left = 367.0
+offset_top = 281.0
+offset_right = 591.0
+offset_bottom = 434.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Control" unique_id=2063751657]
+layout_mode = 0
+offset_left = -143.0
+offset_top = -41.0
+offset_right = 555.0
+offset_bottom = 33.0
+theme = SubResource("Theme_loq3h")
+theme_override_colors/font_shadow_color = Color(0.055933654, 0.2157813, 0.6062062, 1)
+theme_override_fonts/font = SubResource("FontVariation_ostoq")
+theme_override_font_sizes/font_size = 50
+text = "Vitória! Você encontrou a Adamant Orb! "
+label_settings = SubResource("LabelSettings_ajtct")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control" unique_id=1670784829]
 layout_mode = 0
@@ -322,6 +348,7 @@ offset_right = 269.0
 offset_bottom = 184.0
 
 [node name="Botao_mapa" type="Label" parent="CanvasLayer/Control/VBoxContainer" unique_id=784657310]
+custom_minimum_size = Vector2(70, 50)
 layout_mode = 2
 theme = SubResource("Theme_jlj7e")
 theme_override_styles/normal = SubResource("StyleBoxFlat_r4inx")
