@@ -1,4 +1,5 @@
 extends Control
+@onready var foto: Sprite2D = $Sprite2D2
 
 
 # Called when the node enters the scene tree for the first time.
@@ -12,8 +13,7 @@ func _process(delta: float) -> void:
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	$"Tela Final/Mensagem".visible = true
-	$"Tela Final/VBoxContainer".visible = true
+	$Sprite2D2.visible = true
 
 
 func _on_voltar_menu_pressed() -> void:
@@ -22,3 +22,8 @@ func _on_voltar_menu_pressed() -> void:
 
 func _on_sair_jogo_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_timer_timeout() -> void:
+	$"Tela Final/Mensagem".visible = true
+	$"Tela Final/VBoxContainer".visible = true

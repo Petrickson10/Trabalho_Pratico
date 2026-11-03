@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dkcor2rmngjmy" path="res://Arte/Art-Credito2.jpg" id="1_5vcb0"]
 [ext_resource type="Script" uid="uid://bkycrid2j4g38" path="res://Scripts/creditos.gd" id="1_a3en7"]
 [ext_resource type="FontFile" uid="uid://brpcgc1mhjgsq" path="res://Arte/pokemon_pixel_font.ttf" id="2_ct8y5"]
+[ext_resource type="Texture2D" uid="uid://br33vqnomghbe" path="res://Arte/Foto.jpg" id="4_0ep0f"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6dmbp"]
 font = ExtResource("2_ct8y5")
@@ -60,7 +61,7 @@ font_color = Color(1, 1, 0.31764707, 1)
 font_color = Color(1, 0.019607844, 1, 1)
 
 [sub_resource type="Animation" id="Animation_a3en7"]
-length = 0.001
+length = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -206,11 +207,21 @@ label_settings = SubResource("LabelSettings_576tj")
 libraries/ = SubResource("AnimationLibrary_a3en7")
 autoplay = &"Rolagem_Creditos"
 
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=710331437]
+visible = false
+position = Vector2(584, 331.00003)
+scale = Vector2(0.61685824, 0.61685824)
+texture = ExtResource("4_0ep0f")
+
 [node name="Tela Final" type="Control" parent="." unique_id=249715241]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 14.0
+offset_right = 4.0
+offset_bottom = 14.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -260,6 +271,11 @@ theme_override_fonts/font = ExtResource("2_ct8y5")
 theme_override_font_sizes/font_size = 32
 text = "Sair do Jogo"
 
+[node name="Timer" type="Timer" parent="." unique_id=485415076]
+wait_time = 22.0
+autostart = true
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="pressed" from="Tela Final/VBoxContainer/VoltarMenu" to="." method="_on_voltar_menu_pressed"]
 [connection signal="pressed" from="Tela Final/VBoxContainer/SairJogo" to="." method="_on_sair_jogo_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
