@@ -11,6 +11,4 @@ func _on_body_entered(body: Node2D) -> void:
 		if painel_vitoria:
 			painel_vitoria.visible = true
 		
-		get_tree().paused = true
 		
-		queue_free()
