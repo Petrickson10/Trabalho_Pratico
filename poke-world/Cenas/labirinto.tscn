@@ -14,6 +14,10 @@ script/source = "extends Node2D
 func _on_botao_mapa_pressed() -> void:
 	personagem.global_position = natural.global_position
 	$CanvasLayer/Control.visible = false
+
+
+func _on_botao_menu_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://Cenas/menu.tscn\")
 "
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qbx86"]
@@ -350,3 +354,4 @@ text = "Sair"
 
 [connection signal="body_entered" from="Orb" to="Orb" method="_on_body_entered"]
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Botao_mapa" to="." method="_on_botao_mapa_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Botao_menu" to="." method="_on_botao_menu_pressed"]

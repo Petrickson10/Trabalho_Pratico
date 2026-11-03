@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bkycrid2j4g38" path="res://Scripts/creditos.gd" id="1_a3en7"]
 [ext_resource type="FontFile" uid="uid://brpcgc1mhjgsq" path="res://Arte/pokemon_pixel_font.ttf" id="2_ct8y5"]
 [ext_resource type="Texture2D" uid="uid://br33vqnomghbe" path="res://Arte/Foto.jpg" id="4_0ep0f"]
+[ext_resource type="AudioStream" uid="uid://d2mih2j3a3ovn" path="res://Arte/Musica/Memórias_M4A_128K_.mp3" id="5_y3t63"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6dmbp"]
 font = ExtResource("2_ct8y5")
@@ -274,6 +275,11 @@ text = "Sair do Jogo"
 [node name="Timer" type="Timer" parent="." unique_id=485415076]
 wait_time = 18.5
 autostart = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1355574029]
+stream = ExtResource("5_y3t63")
+volume_db = 10.0
+autoplay = true
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="pressed" from="Tela Final/VBoxContainer/VoltarMenu" to="." method="_on_voltar_menu_pressed"]
