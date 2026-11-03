@@ -16,3 +16,7 @@ func _on_botao_1_pressed() -> void:
 	timer_labirinto.start()
 func _on_timer_labirinto_timeout() -> void:
 	personagem.global_position = posicao_original
+
+
+func _on_botao_3_pressed() -> void:
+	pass # Replace with function body.

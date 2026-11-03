@@ -4,14 +4,14 @@ extends Area2D
 
 func _ready() -> void:
 	if botao:
-		botao.visible = false
+		botao.hide()
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Giratina":
 		if botao:
-			botao.visible = true
+			botao.show()
 
-func _on_body_exited(body: Node2D) -> void: 
+func _on_body_exited(body: Node2D) -> void:
 	if body.name == "Giratina":
 		if botao:
-			botao.visible = false
+			botao.hide()
