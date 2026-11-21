@@ -37,13 +37,13 @@ func _physics_process(delta: float) -> void:
 		get_parent().add_child(tiro)
 		animacao.play("Atacar")
 	
-	if Input.is_action_pressed("ui_left"):
+	if Input.is_action_pressed("ui_left") or Input.is_action_pressed("A"):
 		velocity.x = -1*SPEED
-	if Input.is_action_pressed("ui_right"):
+	if Input.is_action_pressed("ui_right") or Input.is_action_pressed("D"):
 		velocity.x = 1*SPEED
-	if Input.is_action_pressed("ui_up"):
+	if Input.is_action_pressed("ui_up") or Input.is_action_pressed("W"):
 		velocity.y = -1*SPEED
-	if Input.is_action_pressed("ui_down"):
+	if Input.is_action_pressed("ui_down") or Input.is_action_pressed("S"):
 		velocity.y = 1*SPEED
 		
 	move_and_slide()
