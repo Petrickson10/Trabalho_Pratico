@@ -10,10 +10,12 @@
 script/source = "extends Node2D
 @onready var personagem:CharacterBody2D = $\"../Giratina\"
 @onready var natural: Marker2D = $\"../Ponto1\"
+@onready var label_timer = $CanvasLayer/LabelTimer
 
 func _on_botao_mapa_pressed() -> void:
 	personagem.global_position = natural.global_position
 	$CanvasLayer/Control.visible = false
+	label_timer.visible = false
 
 
 func _on_botao_menu_pressed() -> void:
@@ -277,6 +279,10 @@ corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
+[sub_resource type="LabelSettings" id="LabelSettings_6dmbp"]
+font = ExtResource("7_yxp37")
+font_size = 100
+
 [node name="Labirinto" type="Node2D" unique_id=1124162252]
 script = SubResource("GDScript_k668f")
 
@@ -351,6 +357,14 @@ text = "Menu"
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_0ekxr")
 text = "Sair"
+
+[node name="LabelTimer" type="Label" parent="CanvasLayer" unique_id=324168667]
+offset_left = 42.0
+offset_top = 28.0
+offset_right = 117.0
+offset_bottom = 116.0
+text = "30"
+label_settings = SubResource("LabelSettings_6dmbp")
 
 [connection signal="body_entered" from="Orb" to="Orb" method="_on_body_entered"]
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Botao_mapa" to="." method="_on_botao_mapa_pressed"]

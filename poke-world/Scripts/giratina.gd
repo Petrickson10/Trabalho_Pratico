@@ -11,16 +11,16 @@ var ultima_direcao: String = "baixo"
 func _physics_process(_delta: float) -> void:
 	var direcao := Vector2.ZERO
 
-	if Input.is_action_pressed("ui_left"):
+	if Input.is_action_pressed("ui_left")  or Input.is_action_pressed("A"):
 		direcao.x -= 1
 
-	if Input.is_action_pressed("ui_right"):
+	if Input.is_action_pressed("ui_right")  or Input.is_action_pressed("D"):
 		direcao.x += 1
 
-	if Input.is_action_pressed("ui_up"):
+	if Input.is_action_pressed("ui_up")  or Input.is_action_pressed("W"):
 		direcao.y -= 1
 
-	if Input.is_action_pressed("ui_down"):
+	if Input.is_action_pressed("ui_down")  or Input.is_action_pressed("S"):
 		direcao.y += 1
 
 	direcao = direcao.normalized()
