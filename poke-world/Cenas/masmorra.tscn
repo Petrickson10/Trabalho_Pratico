@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://d25hujxi3ndb6" path="res://Scripts/orb_2.gd" id="3_e74s3"]
 [ext_resource type="Texture2D" uid="uid://crstuxphy03lt" path="res://Arte/LoustrosOrb-removebg-preview.png" id="4_yy036"]
 [ext_resource type="FontFile" uid="uid://brpcgc1mhjgsq" path="res://Arte/pokemon_pixel_font.ttf" id="5_7vr7r"]
+[ext_resource type="AudioStream" uid="uid://dejobm0t2hfpd" path="res://Arte/Musica/Pokémon-Diamond_-Pearl-_-Platinum-Arceus-Battle-Music-_HQ__M4A_128K_.mp3" id="6_yy036"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1xf1d"]
 texture = ExtResource("1_0alm4")
@@ -3392,6 +3393,11 @@ offset_right = 830.0
 offset_bottom = 307.0
 text = "Vitória! Você encontrou o Lustrous Orb! "
 label_settings = SubResource("LabelSettings_ip5el")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=141077696]
+position = Vector2(1159, 10)
+stream = ExtResource("6_yy036")
+autoplay = true
 
 [connection signal="body_entered" from="Sala1(Porta1)" to="." method="_on_sala_1_porta_1_body_entered"]
 [connection signal="body_entered" from="Sala1(Porta2)" to="." method="_on_sala_1_porta_2_body_entered"]

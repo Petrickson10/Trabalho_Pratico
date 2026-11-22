@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bmbf55ua7v4gv"]
 
 [ext_resource type="Script" uid="uid://c6atswhgobbmw" path="res://Scripts/giratina_f.gd" id="1_ci771"]
+[ext_resource type="Script" uid="uid://tnegicem6cmd" path="res://Scripts/fase_arceus.gd" id="1_jd51i"]
 [ext_resource type="Texture2D" uid="uid://byd4p70y0yvia" path="res://Arte/Sprites/Giratina-Origem/Attack-Anim.png" id="2_a7ysi"]
 [ext_resource type="Texture2D" uid="uid://dgf6w6qm0dtof" path="res://Arte/Clouds 3/1.png" id="3_a7ysi"]
 [ext_resource type="Texture2D" uid="uid://r2sf0dlrxypv" path="res://Arte/Clouds 3/2.png" id="4_c30ex"]
@@ -12,6 +13,7 @@
 [ext_resource type="FontFile" uid="uid://brpcgc1mhjgsq" path="res://Arte/pokemon_pixel_font.ttf" id="10_1e8md"]
 [ext_resource type="PackedScene" uid="uid://bg5fh6kdmni1f" path="res://Cenas/arceus.tscn" id="11_t3kv6"]
 [ext_resource type="Script" uid="uid://dn5bqyfdd4u8" path="res://Scripts/gerador_inimigos.gd" id="12_1bxio"]
+[ext_resource type="AudioStream" uid="uid://dstx3foov2lah" path="res://Arte/Musica/Pokémon-Legends_-Arceus-Giratina-Battle-Music-_HQ__M4A_128K_.mp3" id="14_jbt4v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6dmbp"]
 size = Vector2(1153, 20)
@@ -108,7 +110,58 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a7ysi"]
 size = Vector2(81, 104)
 
+[sub_resource type="LabelSettings" id="LabelSettings_k6ged"]
+font = ExtResource("10_1e8md")
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_ip5el"]
+font = ExtResource("10_1e8md")
+font_size = 64
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jbt4v"]
+bg_color = Color(0.44508862, 0.1725755, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pr75b"]
+bg_color = Color(0.1529645, 0.00019853935, 0.4205495, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kicsa"]
+bg_color = Color(0.61407495, 0.6056338, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o1d58"]
+bg_color = Color(0.8509804, 0, 0.13725491, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tkwmk"]
+bg_color = Color(0.9999998, 0.14430648, 0.15407291, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h61ho"]
+bg_color = Color(0.56078434, 0, 0.13725491, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
 [node name="Final" type="Node2D" unique_id=798134499]
+script = ExtResource("1_jd51i")
 
 [node name="Parede" type="Area2D" parent="." unique_id=886471079]
 collision_mask = 3
@@ -219,6 +272,60 @@ position = Vector2(1011, 374)
 script = ExtResource("12_1bxio")
 
 [node name="Timer" type="Timer" parent="GeradorInimigos" unique_id=911196246]
+wait_time = 0.7
 autostart = true
 
+[node name="TimerCreditos" type="Timer" parent="." unique_id=985878503]
+wait_time = 5.0
+one_shot = true
+
+[node name="Game_Over" type="CanvasLayer" parent="." unique_id=812835994]
+
+[node name="Label" type="Label" parent="Game_Over" unique_id=1525537428]
+visible = false
+offset_left = 100.0
+offset_top = 411.0
+offset_right = 1116.0
+offset_bottom = 467.0
+text = "Giratina novamente banido e voltou a vagar sozinho"
+label_settings = SubResource("LabelSettings_k6ged")
+
+[node name="Vitoria" type="CanvasLayer" parent="." unique_id=598888315]
+
+[node name="Label" type="Label" parent="Vitoria" unique_id=727735541]
+visible = false
+offset_left = 101.0
+offset_top = 486.0
+offset_right = 1113.0
+offset_bottom = 542.0
+text = "Giratina foi liberto e o mundo nunca mais foi o mesmo"
+label_settings = SubResource("LabelSettings_ip5el")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1608484583]
+visible = false
+offset_left = 498.0
+offset_top = 198.0
+offset_right = 555.0
+offset_bottom = 264.0
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=1062665195]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_jbt4v")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pr75b")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kicsa")
+text = "MENU"
+
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=299225421]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_o1d58")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tkwmk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_h61ho")
+text = "SAIR"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=803416980]
+stream = ExtResource("14_jbt4v")
+autoplay = true
+
 [connection signal="timeout" from="GeradorInimigos/Timer" to="GeradorInimigos" method="_on_timer_timeout"]
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]

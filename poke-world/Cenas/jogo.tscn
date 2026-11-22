@@ -3869,6 +3869,106 @@ size = Vector2(30, 42)
 font = ExtResource("9_r4inx")
 font_size = 42
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4aojw"]
+bg_color = Color(0.44508862, 0.1725755, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_an0l0"]
+bg_color = Color(0.1529645, 0.00019853935, 0.4205495, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eqycv"]
+bg_color = Color(0.61407495, 0.6056338, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kw5yo"]
+bg_color = Color(0.8509804, 0, 0.13725491, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m6kt3"]
+bg_color = Color(0.9999998, 0.14430648, 0.15407291, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4oa7e"]
+bg_color = Color(0.56078434, 0, 0.13725491, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5fnkj"]
+bg_color = Color(0, 0.72413224, 0.24097481, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vherq"]
+bg_color = Color(0.2130087, 0.7184979, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_en3qn"]
+bg_color = Color(9.770542e-06, 0.7913579, 0.17137933, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="LabelSettings" id="LabelSettings_w78of"]
+font_size = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nmi6f"]
+bg_color = Color(0.5529166, 0, 0.006206316, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c4i2n"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ea3do"]
+bg_color = Color(0.63201374, 0, 0.014722089, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gqmlc"]
+bg_color = Color(0.7137255, 0.6627451, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1swbg"]
+bg_color = Color(0.9106778, 0.45752764, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uoep5"]
+bg_color = Color(0.8627581, 0.4975773, 1.92523e-07, 1)
+
 [node name="Jogo" type="Node2D" unique_id=368319533]
 script = ExtResource("1_0iqwg")
 
@@ -4015,7 +4115,6 @@ tile_set = SubResource("TileSet_6dmbp")
 [node name="Giratina" type="CharacterBody2D" parent="." unique_id=478 groups=["Giratina!"]]
 position = Vector2(845, 548)
 script = ExtResource("3_y28df")
-velocidade = 700.0
 
 [node name="AnimacaoG" type="AnimatedSprite2D" parent="Giratina" unique_id=1700527000]
 sprite_frames = SubResource("SpriteFrames_6dmbp")
@@ -4043,6 +4142,72 @@ label_settings = SubResource("LabelSettings_6dmbp")
 wait_time = 5.0
 one_shot = true
 
+[node name="CanvasLayerMenu" type="CanvasLayer" parent="." unique_id=1747370543]
+
+[node name="Control" type="Control" parent="CanvasLayerMenu" unique_id=606574332]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayerMenu/Control" unique_id=521148824]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Menu" type="Button" parent="CanvasLayerMenu/Control/VBoxContainer" unique_id=1611275538]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_4aojw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_an0l0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_eqycv")
+text = "MENU"
+
+[node name="Sair" type="Button" parent="CanvasLayerMenu/Control/VBoxContainer" unique_id=1236497855]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_kw5yo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_m6kt3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4oa7e")
+text = "SAIR"
+
+[node name="Créditos" type="Button" parent="CanvasLayerMenu/Control/VBoxContainer" unique_id=468832971]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_5fnkj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vherq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_en3qn")
+text = "CRÉDITOS"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayerMenu/Control" unique_id=2114087478]
+visible = false
+layout_mode = 0
+offset_left = 3.0
+offset_top = 206.0
+offset_right = 231.0
+offset_bottom = 379.0
+
+[node name="Label" type="Label" parent="CanvasLayerMenu/Control/VBoxContainer2" unique_id=758754997]
+layout_mode = 2
+text = "Deseja realmente sair?
+Todo seu progresso 
+será perdido."
+label_settings = SubResource("LabelSettings_w78of")
+
+[node name="SS" type="Button" parent="CanvasLayerMenu/Control/VBoxContainer2" unique_id=600532362]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_nmi6f")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_c4i2n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ea3do")
+text = "Sim"
+
+[node name="NN" type="Button" parent="CanvasLayerMenu/Control/VBoxContainer2" unique_id=2123730495]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_gqmlc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1swbg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uoep5")
+text = "Não"
+
 [connection signal="body_entered" from="Area_botao1" to="Area_botao1" method="_on_body_entered"]
 [connection signal="body_exited" from="Area_botao1" to="Area_botao1" method="_on_body_exited"]
 [connection signal="pressed" from="Area_botao1/Botao1" to="." method="_on_botao_1_pressed"]
@@ -4052,3 +4217,8 @@ one_shot = true
 [connection signal="body_entered" from="Area_botao3" to="Area_botao3" method="_on_body_entered"]
 [connection signal="body_exited" from="Area_botao3" to="Area_botao3" method="_on_body_exited"]
 [connection signal="pressed" from="Area_botao3/Botao3" to="." method="_on_botao_3_pressed"]
+[connection signal="pressed" from="CanvasLayerMenu/Control/VBoxContainer/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="CanvasLayerMenu/Control/VBoxContainer/Sair" to="." method="_on_sair_pressed"]
+[connection signal="pressed" from="CanvasLayerMenu/Control/VBoxContainer/Créditos" to="." method="_on_créditos_pressed"]
+[connection signal="pressed" from="CanvasLayerMenu/Control/VBoxContainer2/SS" to="." method="_on_ss_pressed"]
+[connection signal="pressed" from="CanvasLayerMenu/Control/VBoxContainer2/NN" to="." method="_on_nn_pressed"]

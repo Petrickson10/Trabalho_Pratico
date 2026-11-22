@@ -2,12 +2,15 @@ extends Area2D
 
 @export var vida_maxima: int = 2
 var vida_atual: int
+var vv:int = 0
+signal arceus_derrotado
 @onready var label_vida: Label = $"../Vida_A"
 @export var velocidade_vertical: float = 180.0
 @export var limite_superior: float = 50.0
 @export var limite_inferior: float = 598.0
 @export var distancia_minima: float = 60.0
 @export var distancia_maxima: float = 250.0
+@onready var gerador = $"../GeradorInimigos"
 
 var destino_y: float
 
@@ -15,6 +18,7 @@ func _ready() -> void:
 	vida_atual = vida_maxima
 	atualizar_label_vida()
 	escolher_destino()
+
 
 func atualizar_label_vida() -> void:
 	label_vida.text = "Vida Arceus: " + str(vida_atual)
@@ -57,4 +61,6 @@ func receber_dano(quantidade: int = 1) -> void:
 	print("Vida do Arceus: ", vida_atual, "/", vida_maxima)
 
 	if vida_atual <= 0:
+		arceus_derrotado.emit()
 		queue_free()
+		

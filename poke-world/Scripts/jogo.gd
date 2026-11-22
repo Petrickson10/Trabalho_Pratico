@@ -10,6 +10,7 @@ extends Node2D
 @onready var entrada_masmorra: Marker2D = $Masmorra/EntradaMasmorra
 @onready var label_mensagem = $CanvasLayer/LabelMensagem
 @onready var timer_mensagem = $CanvasLayer/TimerMensagem
+@onready var canvas_menu = $CanvasLayerMenu
 var posicao_original: Vector2
 var orb_1_coletada: bool = false
 var orb_2_coletada: bool = false
@@ -22,6 +23,12 @@ func _ready() -> void:
 	orb_labirinto.orb_coletada.connect(_on_orb_1_coletada)
 	orbe_masmorra.orbe_2_coletada.connect(_on_orb_2_coletada)
 	label_timer.visible = false
+	canvas_menu.visible = false
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("abrir_menu"):
+		canvas_menu.visible = not canvas_menu.visible
+
 
 func _on_orb_1_coletada() -> void:
 	orb_1_coletada = true
@@ -51,7 +58,7 @@ func _on_botao_3_pressed() -> void:
 	if orb_1_coletada and orb_2_coletada:
 		get_tree().change_scene_to_file("res://Cenas/Fase_Arceus.tscn")
 	elif orb_1_coletada or orb_2_coletada:
-		mostrar_mensagem("Você reuniu apenas metade do poder necessário para prosseguir...")
+		mostrar_mensagem("Você reuniu apenas metade do poder necessário")
 	else:
 		mostrar_mensagem("Você ainda tem um caminho longo a percorrer!")
 		
@@ -62,3 +69,18 @@ func mostrar_mensagem(texto:String) -> void:
 func _on_timer_mensagem_timeout() -> void:
 	label_mensagem.visible=false
 	
+
+
+func _on_menu_pressed() -> void:
+		get_tree().change_scene_to_file("res://Cenas/menu.tscn")
+
+func _on_sair_pressed() -> void:
+	$CanvasLayerMenu/Control/VBoxContainer2.visible = true
+
+func _on_ss_pressed() -> void:
+		get_tree().quit()
+func _on_nn_pressed() -> void:
+		canvas_menu.visible = false
+
+func _on_créditos_pressed() -> void:
+	get_tree().change_scene_to_file("res://Cenas/creditos.tscn")

@@ -5,6 +5,7 @@ var vida_atual: int
 const SPEED = 300.0
 var cena_tiro
 @onready var animacao: AnimatedSprite2D = $AnimatedSprite2D
+signal giratina_derrotado
 
 func _ready() -> void:
 	vida_atual = vida_maxima
@@ -23,6 +24,7 @@ func receber_dano(quantidade: int = 1) -> void:
 
 
 	if vida_atual <= 0:
+		giratina_derrotado.emit()
 		queue_free()
 
 
@@ -30,7 +32,7 @@ func _physics_process(delta: float) -> void:
 	velocity.x = 0
 	velocity.y = 0
 	animacao.play("default")
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("ui_accept") or Input.is_action_just_pressed("Click"):
 		var tiro = cena_tiro.instantiate()
 		tiro.position.y = position.y + 320
 		tiro.position.x = position.x+135
@@ -47,5 +49,4 @@ func _physics_process(delta: float) -> void:
 		velocity.y = 1*SPEED
 		
 	move_and_slide()
-	
 	
