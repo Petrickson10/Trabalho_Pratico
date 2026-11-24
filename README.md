@@ -6,7 +6,7 @@
 W/↑: mover-se para cima - A/←: mover-se para a esquerda - S/↓: mover-se para baixo - D:→: mover-se para a direita - Teclado/mouse: atirar
 
 ## Inimigos e/ou obstáculos 
-Arceus: Movimenta-se e deixa 
+Arceus: Movimenta-se e ataca.
 
 ## Itens e coletáveis 
 Adamant Orb e Lustrous Orb, ao coletá-las a fase é finalizada e o jogador possui a vitória.
