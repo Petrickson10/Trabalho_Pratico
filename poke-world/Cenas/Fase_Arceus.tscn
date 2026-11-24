@@ -302,7 +302,6 @@ text = "Giratina foi liberto e o mundo nunca mais foi o mesmo"
 label_settings = SubResource("LabelSettings_ip5el")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1608484583]
-visible = false
 offset_left = 498.0
 offset_top = 198.0
 offset_right = 555.0
@@ -310,6 +309,7 @@ offset_bottom = 264.0
 
 [node name="Button" type="Button" parent="VBoxContainer" unique_id=1062665195]
 layout_mode = 2
+theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_jbt4v")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_pr75b")
 theme_override_styles/hover = SubResource("StyleBoxFlat_kicsa")
@@ -317,6 +317,7 @@ text = "MENU"
 
 [node name="Button2" type="Button" parent="VBoxContainer" unique_id=299225421]
 layout_mode = 2
+theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_o1d58")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_tkwmk")
 theme_override_styles/hover = SubResource("StyleBoxFlat_h61ho")
