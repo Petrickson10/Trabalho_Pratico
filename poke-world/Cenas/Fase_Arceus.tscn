@@ -67,7 +67,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jbt4v")
 }],
-"loop": 1,
+"loop": true,
 "name": &"default",
 "speed": 5.0
 }]
@@ -94,7 +94,7 @@ animations = [{
 "duration": 2.0,
 "texture": SubResource("AtlasTexture_pr75b")
 }],
-"loop": 0,
+"loop": false,
 "name": &"Atacar",
 "speed": 5.0
 }, {
@@ -102,7 +102,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fltld")
 }],
-"loop": 1,
+"loop": true,
 "name": &"default",
 "speed": 7.0
 }]
@@ -302,6 +302,7 @@ text = "Giratina foi liberto e o mundo nunca mais foi o mesmo"
 label_settings = SubResource("LabelSettings_ip5el")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1608484583]
+visible = false
 offset_left = 498.0
 offset_top = 198.0
 offset_right = 555.0
