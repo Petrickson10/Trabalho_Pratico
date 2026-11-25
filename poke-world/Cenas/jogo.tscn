@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://086t82xiusd8" path="res://Arte/TileMap/Ruinas2.png" id="4_xmmbr"]
 [ext_resource type="AudioStream" uid="uid://cesfxefr0qchs" path="res://Arte/Musica/Distortion-World-Pokémon-Platinum-Music-Extended-HD_M4A_128K_.mp3" id="7_xmmbr"]
 [ext_resource type="Script" uid="uid://bo6m18jo8ymq1" path="res://Scripts/Area_botao1.gd" id="8_p2wm8"]
-[ext_resource type="Script" uid="uid://dj0rrrq2vs1kt" path="res://Cenas/area_botao_3.gd" id="9_n6akw"]
+[ext_resource type="Script" uid="uid://dj0rrrq2vs1kt" path="res://Scripts/area_botao_3.gd" id="9_n6akw"]
 [ext_resource type="FontFile" uid="uid://brpcgc1mhjgsq" path="res://Arte/pokemon_pixel_font.ttf" id="9_r4inx"]
 [ext_resource type="Texture2D" uid="uid://dw7lymrr44mg3" path="res://Arte/maze.png" id="11_0ekxr"]
 [ext_resource type="PackedScene" uid="uid://ctpbyj7sp18i1" path="res://Cenas/labirinto.tscn" id="11_j7fpx"]
@@ -3824,7 +3824,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xmmbr")
 }],
-"loop": 1,
+"loop": true,
 "name": &"Andar Baixo",
 "speed": 5.0
 }, {
@@ -3835,7 +3835,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_r4inx")
 }],
-"loop": 1,
+"loop": true,
 "name": &"Andar Cima",
 "speed": 5.0
 }, {
@@ -3846,7 +3846,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_j7fpx")
 }],
-"loop": 1,
+"loop": true,
 "name": &"Andar Direita",
 "speed": 5.0
 }, {
@@ -3857,7 +3857,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_n6akw")
 }],
-"loop": 1,
+"loop": true,
 "name": &"Andar Esquerda",
 "speed": 5.0
 }]
